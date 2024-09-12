@@ -2,7 +2,11 @@ import requests
 import time
 import json
 from datetime import datetime
+from dotenv import load_dotenv
 
+
+# Load environment variables from .env file
+load_dotenv()
 
 # API_KEY 
 TOKEN = 'ALPHA_VANTAGE_API_KEY'
@@ -20,14 +24,14 @@ def fetch_stock_data(ticker):
 data = fetch_stock_data(ticker)
 
 # Write data to JSON file
-with open('./full_stock_data.json', 'w') as f:
+with open('./data/full_stock_data.json', 'w') as f:
     json.dump(data, f, indent=4)
 
 
 
 #### FILTER DATA ####
 # Load data from JSON file
-with open('full_stock_data.json', 'r') as f:
+with open('./data/full_stock_data.json', 'r') as f:
     data = json.load(f)
 
 # Get the current date and the date 15 years ago
@@ -43,8 +47,8 @@ filtered_data = {
 }
 
 # Write filtered data to a new JSON file
-with open('filtered_stock_data.json', 'w') as f:
+with open('./data/filtered_stock_data.json', 'w') as f:
     json.dump(filtered_data, f, indent=4)
 
 
-
+print("Filtered data saved to 'filtered_stock_data.json'")
