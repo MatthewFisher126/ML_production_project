@@ -9,7 +9,7 @@ TOKEN = 'ALPHA_VANTAGE_API_KEY'
 ticker = 'AAPL'
 
 # Function to fetch historical APPLE stock data.
-def fetch_historical_weather(ticker):
+def fetch_stock_data(ticker):
     url = f'https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol={ticker}&apikey={TOKEN}&outputsize=full'
     print(url)
     headers = {'token': TOKEN}
@@ -17,7 +17,7 @@ def fetch_historical_weather(ticker):
     return response.json()
 
 # Fetch data
-data = fetch_historical_weather(ticker)
+data = fetch_stock_data(ticker)
 
 # Write data to JSON file
 with open('./full_stock_data.json', 'w') as f:
