@@ -122,7 +122,8 @@ celerybeat.pid
 *.sage.py
 
 # Environments
-artifacts/
+.DS_store
+.artifacts/
 .env
 .venv
 env/
