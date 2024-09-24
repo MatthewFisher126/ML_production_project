@@ -13,7 +13,18 @@
 - When the best model in Model trainer is found it will be used to predict the students performance based on the inputs in the flask app. 
 
 4. **Docker**
-5. **Compute**
+
+ - Added Docker to the EC2 instance by doing the steps below:
+    - sudo apt-get update -y
+    - sudo apt-get upgrade
+    - #required
+    - curl -fsSL https://get.docker.com -o get-docker.sh
+    - sudo sh get-docker.sh
+    - sudo usermod -aG docker ubuntu
+    - newgrp docker
+  
+
+6. **Compute**
 
 - AWS was used for this project. 
 
