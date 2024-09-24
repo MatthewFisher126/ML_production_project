@@ -1,8 +1,0 @@
-requests
-datetime
-python-dotenv
-boto3
-pandas
-flask
-numpy
-scikit-learn
