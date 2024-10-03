@@ -22,6 +22,8 @@
     - sudo sh get-docker.sh
     - sudo usermod -aG docker ubuntu
     - newgrp docker
+
+ - The Docker container was added to an ECR on AWS
   
 
 6. **Compute**
@@ -30,4 +32,10 @@
 
 - At first, ElasticBeanstalk (.ebextensions/python.config) was used as a continuous deployment app using Code Pipeline. I wanted to improve this by not only using Docker containers but also having a CI/CD pipeline that starts on Github actions and is pushed to AWS. 
 
-5. **Monitoring**
+- An EC2 instance was used along with Github Actions. In order to configure the EC2 as a self-hosted runner you need to do the below in Github (settings -> Security and Variables -> Actions):
+    - AWS_ACCESS_KEY_ID=
+    - AWS_SECRET_ACCESS_KEY=
+    - AWS_REGION = us-east-1
+    - AWS_ECR_LOGIN_URI = demo>> 566373416292.dkr.ecr.ap-south-1.amazonaws.com
+    - ECR_REPOSITORY_NAME = simple-app
+
